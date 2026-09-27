@@ -533,12 +533,22 @@ a {
   background: #ffffff;
 }
 
-/* Responsif untuk layar HP */
-@media (max-width: 900px) {
-  .about-grid-container {
-    grid-template-columns: 1fr; /* Di HP berubah jadi 1 kolom ke bawah */
+@media (max-width: 768px) {
+  /* Ubah susunan navbar menjadi ke bawah atau sesuaikan ukurannya */
+  .nav-container {
+    grid-template-columns: 1fr auto; /* Mengatur ulang tata letak grid untuk HP */
+    gap: 10px;
   }
-  .about-photos {
-    flex-direction: row; /* Di HP foto bisa berdampingan */
+  
+  .nav-menu {
+    display: flex;
+    gap: 12px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    gap: 4px;
   }
 }
