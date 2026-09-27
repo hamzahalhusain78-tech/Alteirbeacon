@@ -18,11 +18,11 @@
   </head>
 
   <body>
+   
     <!-- NAVBAR -->
     <header class="navbar">
       <div class="container nav-container">
-        <!-- Logo Kiri dengan Aksen Islami -->
-        <!-- Logo Kiri dengan Gambar di dalam Lingkaran -->
+        <!-- Logo Kiri -->
         <a href="#home" class="logo nav-link">
           <div class="logo-circle-img">
             <img src="asset/logo1.png" alt="Logo Angkatan" />
@@ -34,7 +34,7 @@
         </a>
 
         <!-- Menu Navigasi Tengah -->
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="navMenu">
           <a class="nav-link active" href="#home">
             <span class="nav-dot"></span> Beranda
           </a>
@@ -49,10 +49,15 @@
           </a>
         </nav>
 
-        <!-- Logo/Ikon Kanan -->
+        <!-- Kanan: Tombol Logo & Tombol Menu HP (Hamburger) -->
         <div class="nav-right">
-          <button class="theme-btn">
-            <img src="asset/logo.png" alt="logo-icon" />
+          <div class="nav-logo-btn">
+            <img src="asset/logo.png" alt="Logo" />
+          </div>
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>
