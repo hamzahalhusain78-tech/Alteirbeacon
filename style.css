@@ -1,0 +1,347 @@
+:root {
+  --primary: #5c8374;        /* Biru Telur Asin / Soft Teal */
+  --primary-light: #93b5a6;  /* Telur Asin Muda */
+  --primary-dark: #374b43;   /* Telur Asin Gelap / Elegan */
+  --accent-gold: #d4af37;    /* Aksen Emas Pesantren */
+  --bg-color: #f7f9f8;       /* Background Lembut */
+  --card-bg: #ffffff;
+  --text-main: #2b3a35;
+  --text-muted: #6b7c75;
+  --border-color: #e2e8e4;
+  --transition: all 0.4s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Mencegah scroll ganda agar sistem slide berfungsi penuh */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 15px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Tombol Tema Tanpa Kotak */
+.theme-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn img {
+  width: 24px;
+  height: auto;
+}
+
+/* ================= WADAH SLIDE ================= */
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.page-section {
+  background: linear-gradient(#48695d, #64b492, rgb(68, 104, 84) );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  padding-top: 80px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-section.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+/* ================= SLIDE 1: HOME ================= */
+.home-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.script-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #e2eafc;
+  margin-bottom: 15px;
+}
+
+.well-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.well-title span {
+  color: var(--accent-gold);
+  display: block;
+}
+
+.home-desc {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.btn-santri {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent-gold);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-santri:hover {
+  background: #c29f30;
+  transform: translateY(-2px);
+}
+
+/* ================= SLIDE 2: ABOUT ================= */
+.about-wrapper {
+  padding: 40px 0;
+}
+
+.section-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 45px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge-santri {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.section-box p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* ================= SLIDE 3: PROJECT ================= */
+.project-wrapper {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.project-wrapper h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.project-wrapper > p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.santri-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  transition: var(--transition);
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(92, 131, 116, 0.1);
+}
+
+.card-item h3 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.card-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ================= SLIDE 4: KONTAK ================= */
+.contact-wrapper {
+  padding: 40px 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-wrapper h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  text-align: left;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.contact-item small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.contact-item p {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+/* Responsive HP */
+@media (max-width: 768px) {
+  .santri-cards {
+    grid-template-columns: 1fr;
+  }
+  .nav-menu {
+    gap: 15px;
+  }
+  .well-title {
+    font-size: 2.2rem;
+  }
+}
+
